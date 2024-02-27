@@ -1,0 +1,279 @@
+.button-disabled {
+    background-color: none !important;
+  }
+  
+  .button-component {
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    line-height: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    text-transform: capitalize;
+    .button-label-right {
+      order: 1;
+    }
+    .button-icon-right {
+      order: 2;
+    }
+    .button-icon-left {
+      order: 1;
+    }
+    .button-label-left {
+      order: 2;
+    }
+  
+    &.button-disabled {
+      cursor: context-menu;
+    }
+  
+    // ......theme & variant...........
+  
+    &.button-contained {
+      border-style: none;
+      background-color: $primary-color;
+      color: $white-color;
+  
+      &.button-color-secondary {
+        background-color: $secondary-color;
+        color: $black-color;
+      }
+      &.button-color-sucess {
+        background-color: $sucess-color;
+      }
+      &.button-color-danger {
+        background-color: $danger-color;
+      }
+      &.button-disabled {
+        opacity: 0.75;
+      }
+    }
+    &.button-text {
+      border-style: none;
+      background-color: $white-color;
+      color: $primary-color;
+  
+      &.button-color-secondary {
+        color: $secondary-color;
+      }
+      &.button-color-sucess {
+        color: $sucess-color;
+      }
+      &.button-color-danger {
+        color: $danger-color;
+      }
+      &.button-disabled {
+        opacity: 0.75;
+      }
+    }
+    &.button-outlined {
+      color: $primary-color;
+      border-color: $primary-color;
+      border-width: 1px;
+      background-color: $white-color;
+  
+      &.button-color-secondary {
+        color: $black-color;
+        border-color: $secondary-color;
+      }
+      &.button-color-sucess {
+        color: $sucess-color;
+        border-color: $sucess-color;
+      }
+      &.button-color-danger {
+        color: $danger-color;
+        border-color: $danger-color;
+      }
+      &.button-disabled {
+        opacity: 0.75;
+      }
+    }
+    //...................size & shape................
+    &.button-square {
+      border-radius: 0% !important;
+    }
+  
+    &.button-circle {
+      border-radius: 50%;
+    }
+    //.......small............//
+    &.button-small {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.46px;
+      font-weight: 500;
+      padding: 8px 22px;
+      height: 31px;
+    }
+    &.buttonIcon-small {
+      padding: 12px;
+      height: 44px;
+      width: 44px;
+      .icons-size {
+        width: 19px;
+        height: 18px;
+        font-size: 18px;
+      }
+    }
+    &.button-icon-label-small {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.46px;
+      font-weight: 500;
+      padding: 8px 22px;
+      height: 35px;
+      width: 106px;
+      &.button-iconLeft {
+        .icons-size {
+          font-size: 16px;
+          margin-left: -6px;
+          margin-top: 2px;
+          margin-right: 10px;
+        }
+      }
+      &.button-iconRight {
+        .icons-size {
+          font-size: 16px;
+          margin-left: 6px;
+          margin-top: 2px;
+          margin-right: 10px;
+        }
+      }
+    }
+    //.........medium ..........//
+    &.button-medium {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.46px;
+      font-weight: 500;
+      padding: 8px 22px;
+      height: 33px;
+    }
+    &.buttonIcon-medium {
+      padding: 14px;
+      height: 48px;
+      width: 48px;
+      .icons-size {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+      }
+    }
+    &.button-icon-label-medium {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.46px;
+      font-weight: 500;
+      padding: 8px 22px;
+      height: 37px;
+      width: 116px;
+      &.button-iconLeft {
+        .icons-size {
+          font-size: 18px;
+          margin-left: -5px;
+          margin-top: 2px;
+          margin-right: 10px;
+        }
+      }
+      &.button-iconRight {
+        .icons-size {
+          font-size: 18px;
+          margin-left: 5px;
+          margin-top: 3px;
+          margin-right: 10px;
+        }
+      }
+    }
+    //........large size....//
+    &.button-large {
+      line-height: 19px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.46px;
+      height: 35px;
+      padding: 8px 22px;
+    }
+  
+    &.buttonIcon-large {
+      padding: 16px;
+      height: 56px;
+      width: 56px;
+      .icons-size {
+        width: 22px;
+        height: 20px;
+        font-size: 22px;
+      }
+    }
+    &.button-icon-label-large {
+      line-height: 19px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.46px;
+      height: 40px;
+      width: 124px;
+      padding: 8px 22px;
+      &.button-iconLeft {
+        .icons-size {
+          font-size: 20px;
+          margin-left: -4px;
+          margin-top: 2px;
+          margin-right: 10px;
+        }
+      }
+      &.button-iconRight {
+        .icons-size {
+          font-size: 20px;
+          margin-left: 4px;
+          margin-top: 3px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  
+  .button-contained:hover,
+  .button-contained:focus {
+    opacity: 0.7;
+  }
+  .button-text:hover,
+  .button-text:focus {
+    opacity: 0.75;
+    &.button-color-primary {
+      background-color: rgba($primary-color, 0.06);
+    }
+    &.button-color-secondary {
+      background-color: rgba($secondary-color, 0.06);
+    }
+  
+    &.button-color-sucess {
+      background-color: rgba($sucess-color, 0.06);
+    }
+    &.button-color-danger {
+      background-color: rgba($danger-color, 0.06);
+    }
+  }
+  
+  .button-outlined:hover,
+  .button-outlined:focus {
+    opacity: 0.75;
+    &.button-color-primary {
+      background-color: rgba($primary-color, 0.06);
+    }
+    &.button-color-secondary {
+      background-color: rgba($secondary-color, 0.06);
+    }
+  
+    &.button-color-sucess {
+      background-color: rgba($sucess-color, 0.06);
+    }
+    &.button-color-danger {
+      background-color: rgba($danger-color, 0.06);
+    }
+  }

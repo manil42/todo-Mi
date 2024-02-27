@@ -1,0 +1,36 @@
+{
+  "name": "todo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "server": "json-server --watch db.json --port 3001"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.23",
+    "init": "^0.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.70.0",
+    "storybook": "^7.6.15",
+    "styled-components": "^6.1.8",
+    "yarn": "^1.22.21"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "storybook-version": "^0.1.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
+  }
+}
