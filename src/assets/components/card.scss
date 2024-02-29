@@ -1,0 +1,19 @@
+.main-container {
+  margin: 20px 20px;
+
+  .card-container {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    padding: 2rem;
+    background-color: beige;
+    min-width: 200px;
+    min-height: 100px;
+    max-width: 400px;
+    border-radius: 15px;
+  }
+  .main-btn-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
