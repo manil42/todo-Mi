@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import Card from "./components/Card/Card";
-import Button from "./components/Button/Button";
-import { SassNumber } from "sass";
 function App() {
   const [post, setPosts] = useState([]);
+
+  const [formData, setFormData] = useState({
+    id: 0,
+    title: "",
+    description: "",
+  });
+
   useEffect(() => {
     fetch("http://localhost:3001/todo")
       .then((response) => response.json())
@@ -13,10 +18,10 @@ function App() {
 
   [];
 
-  const handleAdd = () => {
-    //@ts-ignore
-    setPosts([...post, { id: 3, title: "todo3", description: "hello" }]);
-  };
+  // const handleAdd = () => {
+  //   //@ts-ignore
+  //   setPosts([...post, { id: 3, title: "todo3", description: "hello" }]);
+  // };
 
   const handleEdit = () => {
     console.log("Edit button is clicked");
@@ -28,17 +33,44 @@ function App() {
     setPosts([...data]);
   };
 
+  const handleInputData = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value, id: post.length + 1 });
+    console.log("handleinput data", name, value);
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    // console.log(post);
+    //@ts-ignore
+    setPosts([...post, formData]);
+  };
+
   return (
     <>
       <div>
         <div style={{ margin: "16px" }}>
-          <Button label="Add Todo" handleClick={handleAdd} />
+          <form
+            onSubmit={(e) => {
+              handleSubmit(e);
+            }}
+          >
+            <input
+              type="text"
+              name="title"
+              value={formData.title}
+              onChange={handleInputData}
+            />
+            <input
+              type="text"
+              name="description"
+              value={formData.description}
+              onChange={handleInputData}
+            />
+            <button type="submit"> Add Todo</button>
+          </form>
         </div>
         {post?.map((data: any) => (
-          // <div style={{border:"solid 1px black"}}>
-          // <h1>{data.title}</h1>
-          // <p>{data.description}</p>
-          // </div>
           <div>
             <Card
               title={data.title}
