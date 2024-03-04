@@ -11,10 +11,11 @@
     "server": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
-    "json-server": "^1.0.0-alpha.23",
     "init": "^0.1.2",
+    "json-server": "^1.0.0-alpha.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.2",
     "sass": "^1.70.0",
     "storybook": "^7.6.15",
     "styled-components": "^6.1.8",
