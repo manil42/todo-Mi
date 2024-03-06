@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import Card from "../components/Card/Card";
 import Button from "../components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 function Todo() {
   const [post, setPosts] = useState([]);
 
+  const navigation = useNavigate();
   const [formData, setFormData] = useState({
     id: 0,
     title: "",
@@ -43,26 +45,14 @@ function Todo() {
     setPosts([...post, formData]);
   };
 
+  const handleAddTodo = () => {
+    navigation("/addTodo");
+  };
   return (
     <>
       <div>
         <div style={{ margin: "16px" }}>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSubmit(e);
-            }}
-          >
-            <input
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={(e) => {
-                handleInputData(e);
-              }}
-            />
-            <button type="submit"> Add Todo </button>
-          </form>
+          <Button label="Add Todo" handleClick={handleAddTodo} />
         </div>
         {post?.map((data: any) => (
           <div>
