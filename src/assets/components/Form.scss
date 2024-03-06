@@ -1,0 +1,20 @@
+ .formContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+   .form {
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, 50%);
+     border: solid 1px rgb(229, 220, 207);
+     padding: 1rem;
+     border-radius: 15px;
+     background-color:rgb(230, 230, 230);
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     .containers {
+       padding: 10px;
+     }
+   }
+ }

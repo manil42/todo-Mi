@@ -1,57 +1,76 @@
 import React, { useState } from "react";
 
-const TodoAddForm = () => {
-  const [formData, setFormData] = useState({
-    id: 0,
-    title: "",
-    description: "",
-  });
-
-  const handleInputData = (e: any) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+type todoFormProps = {
+  formData?: {
+    id: number;
+    title: string;
+    description: string;
   };
+  handleSubmit: (e: any) => void;
+  handleInputData: (e: any) => void;
+};
 
-  const handleSubmit = (e: any) => {
-    //@ts-ignore
-    setPosts([...post, formData]);
-  };
+const TodoAddForm = ({
+  handleSubmit,
+  handleInputData,
+  formData,
+}: todoFormProps) => {
+  // const handleInputData = (e: any) => {
+
+  // };
+
+  // const handleSubmit = (e: any) => {
+  //   //@ts-ignore
+  //   setPosts([...post, formData]);
+  // };
 
   return (
-    <div style={{ margin: "16px" }}>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit(e);
-        }}
-      >
-        <div>
-          <label style={{ marginRight: "16px" }}>Title:</label>
+    <div className="formContainer" style={{ margin: "16px" }}>
+      <div className="form">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(e);
+          }}
+        >
+          <div className="containers">
+            <label htmlFor="" style={{ marginRight: "16px" }}>
+              Title :
+            </label>
+            <input
+              type="text"
+              name="title"
+              value={formData?.title}
+              onChange={(e) => {
+                handleInputData(e);
+              }}
+            />
+          </div>
 
-          <input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={(e) => {
-              handleInputData(e);
-            }}
-          />
-        </div>
+          <div className="containers">
+            <label htmlFor="" style={{ marginRight: "16px" }}>
+              Description :
+            </label>
+            <input
+              type="text"
+              name="description"
+              value={formData?.description}
+              onChange={(e) => {
+                handleInputData(e);
+              }}
+            />
+          </div>
 
-        <div>
-          <label style={{ marginRight: "16px" }}>Description:</label>
-
-          <input
-            type="text"
-            name="description"
-            value={formData.description}
-            onChange={(e) => {
-              handleInputData(e);
-            }}
-          />
-        </div>
-        <button type="submit"> Add Todo </button>
-      </form>
+          <button
+            type="submit"
+            className="button-success-color"
+            style={{ marginTop: "8px" }}
+          >
+            {" "}
+            Add Todo{" "}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
